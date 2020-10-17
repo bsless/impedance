@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/bsless/impedance.svg)](https://clojars.org/bsless/impedance)
+
 # Impedance
 
 Transform Clojure maps at speed.
