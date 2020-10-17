@@ -107,7 +107,7 @@ This syntax can be used to create and define functions:
 
 ## License
 
-Copyright © 2020 bsless
+Copyright © 2020 Ben Sless
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
