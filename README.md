@@ -26,7 +26,7 @@ mapping over sequences.
 ## Why not Meander?
 
 Meander is great. It's feature rich and beautiful. It is a whole
-arsenal. On the other hand, Transform is a simple hatchet. Good for one
+arsenal. On the other hand, Impedance is a simple hatchet. Good for one
 thing, sharp enough, and simple. It's also faster.
 
 ### Differences
