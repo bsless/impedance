@@ -55,7 +55,7 @@ As tested with criterium:
 ### Dependency
 
 ```clojure
-[bsless/impedance "0.0.1-alpha"]
+[bsless/impedance "0.0.0-alpha"]
 ```
 
 ### A basic transformer
