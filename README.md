@@ -105,6 +105,13 @@ This syntax can be used to create and define functions:
    :x ^:? [:foo :quux]})
 ```
 
+### Context compiler modes
+
+All context compilers and transformers receive an optional argument for mode, which can be one of the following:
+- `:poly` - will use `clojure.core/get` to get values out of a collection. Highly polymorphic at the slight cost of performance.
+- `:unchecked` - will use direct method invoke of `.valAt` on an object. Will throw if an object doesn't implement `ILookup` and NPE for `nil`.
+- `:checked` - same as `:unchecked` but `nil` checks before every call to `.valAt`.
+
 ## License
 
 Copyright © 2020 Ben Sless
