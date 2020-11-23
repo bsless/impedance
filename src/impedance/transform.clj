@@ -88,6 +88,21 @@
        (let [~@bindings]
          ~to))))
 
+(defn- emit-deftransform
+  "Generates code for a function which transforms from `from` map shape to `to`.
+  Can generate different modes of transformer:
+  - `:poly`: uses `get` to extract values from maps.
+  - `:unchecked`: uses .valAt for ILookup access directly. Will NPE on `nil`.
+  - `:checked`: like unchecked but with nil checks."
+  [name mode from to]
+  (let [arg (with-meta (gensym "rec__") {:tag "clojure.lang.IPersistentMap"})
+        aliases (pattern->aliases from)
+        bindings (binding [b/*mode* mode] (b/aliased-fields->bindings arg aliases))]
+    `(defn ~name
+       [~arg]
+       (let [~@bindings]
+         ~to))))
+
 (defn eval-transform
   "Like [[transform]] but allows creating a transformer at run time.
   Evil warning: uses `eval`."
@@ -101,9 +116,15 @@
   - `:unchecked`: uses .valAt for ILookup access directly. Will NPE on `nil`.
   - `:checked`: like unchecked but with nil checks."
   ([from to]
-   (emit-transform :poly from to))
+   (emit-transform b/*mode* from to))
   ([mode from to]
    (emit-transform mode from to)))
+
+(defmacro deftransform
+  ([name from to]
+   (emit-deftransform b/*mode* name from to))
+  ([name mode from to]
+   (emit-deftransform mode name from to)))
 
 (comment
   (emit-transform
