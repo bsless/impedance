@@ -1,4 +1,4 @@
-(defproject bsless/impedance "0.0.0-alpha1"
+(defproject bsless/impedance "0.0.0-alpha2-SNAPSHOT"
   :description "Fast Clojure map transformers and context"
   :url "https://github.com/bsless/impedance"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
