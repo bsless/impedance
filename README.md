@@ -1,4 +1,6 @@
 [![Clojars Project](https://img.shields.io/clojars/v/bsless/impedance.svg)](https://clojars.org/bsless/impedance)
+[![cljdoc badge](https://cljdoc.org/badge/bsless/impedance)](https://cljdoc.org/d/bsless/impedance/CURRENT)
+[![CircleCI](https://circleci.com/gh/bsless/impedance/tree/master.svg?style=shield)](https://circleci.com/gh/bsless/impedance/tree/master)
 
 # Impedance
 
@@ -55,7 +57,7 @@ As tested with criterium:
 ### Dependency
 
 ```clojure
-[bsless/impedance "0.0.0-alpha"]
+[bsless/impedance "0.0.0-alpha1"]
 ```
 
 ### A basic transformer
