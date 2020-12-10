@@ -4,6 +4,7 @@
 #
 version: 2
 workflows:
+  version: 2
   ci:
     jobs:
       - test
